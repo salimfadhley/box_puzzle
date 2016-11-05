@@ -9,5 +9,5 @@ case class LittleBoxes(littleBoxes:List[LittleBox]) {
   def minW = littleBoxes.map(_.w).max
   def maxH = math.ceil(area / minW.toDouble).toInt
   def maxW = math.ceil(area / minH.toDouble).toInt
-  def possibleBoxes:Set[BigBox] = (minH to maxH).flatMap(x => (minW to maxW).map(y => BigBox(x, y))).filter((b)=>b.area==area).toSet
+  def possibleBoxes:Set[BigBox] = (minH to maxH).flatMap(x => (minW to maxW).map(y => new BigBox(x,y))).filter((b)=>b.area==area).toSet
 }

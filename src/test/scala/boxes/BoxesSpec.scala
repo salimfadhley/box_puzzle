@@ -28,12 +28,13 @@ class BoxesSpec extends FlatSpec with Matchers {
 
   it should "be able to find all the big boxes that are worth checking" in {
     val b:LittleBoxes = List((1,1),(2,1))
-    assert(b.possibleBoxes == Set(BigBox(3,1)))
+    val bb = new BigBox(3,1)
+    assert(b.possibleBoxes == Set(bb))
   }
 
   it should "be able to find arrangements with more than one big box" in {
     val b:LittleBoxes = List((1,1),(1,1),(1,1),(1,1))
-    assert(b.possibleBoxes == Set(BigBox(4,1),BigBox(2,2),BigBox(1,4)))
+    assert(b.possibleBoxes == Set(new BigBox(1,4), new BigBox(2,2), new BigBox(4,1)))
   }
 
 
