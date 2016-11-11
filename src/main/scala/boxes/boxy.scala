@@ -9,5 +9,5 @@ trait boxy {
   lazy val maxX = w - 1
   lazy val maxY = h - 1
   def area:Int = h*w
-  def coords:Seq[(Int,Int)] = for(hh <- 0 to maxX; ww <- 0 to maxY) yield (hh,ww)
+  def coords:Seq[Coordinate2D] = for(hh <- 0 to maxX; ww <- 0 to maxY) yield Coordinate2D(hh,ww)
 }
